@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&family=Roboto&display=swap');
+
+:root {
+    --black: #101026;
+    --offset: #363630;
+    --white: #ffffff;
+    --gray: #8f9ba8;
+    --purple: #371BF2;
+    --lightPurple: #725EF2;
+    --ofPurple: #9593BF;
+    --darkPurple: #2D2C59;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--black);
+    color: var(--white);
+    font-family: 'Roboto', sans-serif;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+nav {
+    z-index: 99999;
+    display: flex;
+    top: 0;
+    width: 100%;
+    position: fixed;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: rgba(45, 44, 89, 0.6);
+    height: 60px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+nav  .bgBlur {
+    content: ' ';
+    position: absolute;
+    filter: blur();
+}
+
+nav ul li.reactable {
+    position: relative;
+    padding-bottom: 0.2rem;
+}
+
+nav ul li.reactable::after {
+    content: ' ';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.1rem;
+    background-color: var(--white);
+    opacity: 1;
+    transform: scale(0);
+    transform-origin: center;
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+nav ul li.reactable:not(:last-child):hover::after,
+nav ul li.reactable:not(:last-child):focus::after {
+    transform: scale(1);
+}
+
+nav li.selected a {
+    color: var(--lightPurple) !important;
+}
+
+nav .logo {
+    height: 35px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--white);
+}
+
+nav li+li {
+    margin-left: 2rem;
+}
+
+main {
+    margin-top: 60px;
+    padding: 2rem;
+}
+
+footer {
+    height: 130px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: var(--white);
+    color: var(--black);
+}
+
+footer div:nth-child(2) {
+    display: flex;
+    align-items: center;
+}
+
+footer span {
+    display: flex;
+    align-items: center;
+    margin-right: 1rem;
+    padding-right: 1rem;
+    border-right: var(--black) solid 0.1rem;
+    height: 50px;
+}
+
+footer img {
+    height: 50px;
+}
+
+footer a {
+    text-decoration: none;
+    color: var(--black);
+}
+
+footer li+li {
+    margin-top: 0.2rem;
+}
