@@ -78,25 +78,26 @@
                 <li class="reactable">
                     <a href="host.html">Hospedagem</a>
                     <div class="expand">
-                        <a href="host.html">Link 1</a>
-                        <a href="host.html">Link 2</a>
-                        <a href="host.html">Link 3</a>
+                        <a href="host.html#host">Contexto</a>
+                        <a href="host.html#domain">Domínio e DNS</a>
+                        <a href="host.html#seo">Google SEO</a>
                     </div>
                 </li>
                 <li class="reactable">
                     <a href="git.html">Git e GitHub</a>
                     <div class="expand">
-                        <a href="git.html">Link 1</a>
-                        <a href="git.html">Link 2</a>
-                        <a href="git.html">Link 3</a>
+                        <a href="git.html#git">Git</a>
+                        <a href="git.html#github">GitHub</a>
+                        <a href="git.html#devgit">Desenvolvimento</a>
+                        <a href="git.html#config">Configurando</a>
+                        <a href="git.html#pratice">Boas Práticas</a>
                     </div>
                 </li>
                 <li class="selected">
                     GitHub Pages
                     <div class="expand">
-                        <a href="pages.html">Link 1</a>
-                        <a href="pages.html">Link 2</a>
-                        <a href="pages.html">Link 3</a>
+                        <a href="pages.html#static">Página Estática</a>
+                        <a href="pages.html#react">Página React</a>
                     </div>
                 </li>
                 <li class="reactable"><a href="https://luccasgomes.com/portifolio" target="_blank">Portifólio</a></li>
@@ -104,7 +105,121 @@
         </nav>
     </header>
     <main>
-        <h1>GitHub Pages</h1>
+        <section>
+            <h1>GitHub Pages</h1>
+            <article>
+                <p>
+                    O Github fornece suporte gratuíto para sites estáticos, básicos,
+                    como por exemplo uma home page.
+                    Lá também é possivel relacionar um domínio que você tem.
+                </p>
+            </article>
+            <article id="static">
+                <h2>Colocando uma página estática no GitHub Pages</h2>
+                <h3 class="center">Acesse seu repositório estático</h3>
+                <img class="exGit" src="assets/images/ex1.PNG">
+                <h3 class="center">Entre em configurações</h3>
+                <img class="exGit" src="assets/images/ex2.PNG">
+                <h3 class="center">Entre em pages</h3>
+                <img class="exGit" src="assets/images/ex3.PNG">
+                <h3 class="center">Selecione a branch para publicação e clique em salvar</h3>
+                <img class="exGit" src="assets/images/ex4.PNG">
+                <h3 class="center">Clique em visite o site. (Se não aparecer, recarregue a tela)</h3>
+                <img class="exGit" src="assets/images/ex5.PNG">
+            </article>
+        </section>
+        <section id="react">
+            <article>
+                <h1>Página em React</h1>
+                <h3>Inicialize um projeto React</h3>
+                <code>npx create-react-app .</code>
+                <h3>Adicione o arquivo <b>index.html</b></h3>
+                <h3>Suba os arquivos para o GitHub</h3>
+                <code>git branch -M main</code>
+                <code>git push -u origin main</code>
+                <h3>Para testar localmente execute</h3>
+                <code>npm start</code>
+                <p>
+                    Se tentar entrar no site pelo GitHub, notará que a página não está funcionando. Isso acontece pois
+                    ele não está buildando a aplicação para que os arquivos
+                    sejam lidos pelo navegador. A aplicação em si só sobe quando é buildada.
+                </p>
+                <p>Para o site funcionar precisamos realizar o Build e Deploy</p>
+                <p>
+                    Esse processo pode ser realizado manualmente, basta
+                    executar
+                </p>
+                <code>npm run build no terminal</code>
+                <p>
+                    você verá que surge
+                    uma nova pasta na raiz do projeto. Porém existe um método mais prático.
+                </p>
+                <h3>Configurando uma Action</h3>
+                <p>
+                    Na raiz do seu repositório, crie uma pasta chamada .github,
+                    dentro dessa pasta, crie outra pasta chamado workflows e
+                    dentro dela crie um arquivo chamado build.yml
+                </p>
+                <code>
+                    name: deploy
+                    <br>
+                    on:
+                    <br>
+                    &ensp;&ensp;push:
+                    <br>
+                    &ensp;&ensp;&ensp;&ensp;branches:
+                    <br>
+                    &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;- main
+                    <br>
+                    jobs:
+                    <br>
+                    &ensp;&ensp;deploy:
+                    <br>
+                    &ensp;&ensp;&ensp;&ensp;runs-on: ubuntu-20.04
+                    <br>
+                    &ensp;&ensp;&ensp;&ensp;steps:
+                    <br>
+                    &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;- uses: actions/checkout@v2
+                    <br>
+                    &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;- uses: actions/setup-node@v1
+                    <br>
+                    &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;with:
+                    <br>
+                    &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;node-version: '18.x'
+                    <br>
+                    &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;- name: Build web-app
+                    <br>
+                    &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;run: |
+                    <br>
+                    &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;npm ci
+                    <br>
+                    &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;npm run build
+                    <br>
+                    &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;- name: Deploy to gh-pages
+                    <br>
+                    &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;uses: peaceiris/actions-gh-pages@v3
+                    <br>
+                    &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;with:
+                    <br>
+                    &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;github_token: ${{ secrets.GITHUB_TOKEN }}
+                    <br>
+                    &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;publish_dir: ./build
+                </code>
+                <p>
+                    Esse arquivo criado em Workflow dispara uma action responsável pelo build e
+                    deploy do nosso pacote em uma branch do GitHub.
+                </p>
+                <h3>Corrigir erro 403</h3>
+                <p>Acesse: Settings -> Actions -> General</p>
+                <p>Vá até o final da página e habilite o Read and Write permission e save</p>
+                <p>Volte na actions que falhou e rode novamente.</p>
+                <h3>Troque a Branch do GitHub Pages</h3>
+                <h3>Ajuste o package.json adicionando</h3>
+                <code>"homepage": "'repositório'/"</code>
+                <h3>Espere o action rodar novamente e você terá uma página react no ar</h3>
+                <img class="exGit" src="https://code.visualstudio.com/assets/docs/nodejs/reactjs/welcome-to-react.png">
+            </article>
+        </section>
     </main>
     <footer>
         <div>

@@ -78,25 +78,26 @@
                 <li class="reactable">
                     <a href="host.html">Hospedagem</a>
                     <div class="expand">
-                        <a href="host.html">Link 1</a>
-                        <a href="host.html">Link 2</a>
-                        <a href="host.html">Link 3</a>
+                        <a href="host.html#host">Contexto</a>
+                        <a href="host.html#domain">Domínio e DNS</a>
+                        <a href="host.html#seo">Google SEO</a>
                     </div>
                 </li>
                 <li class="selected">
                     Git e GitHub
                     <div class="expand">
-                        <a href="git.html">Link 1</a>
-                        <a href="git.html">Link 2</a>
-                        <a href="git.html">Link 3</a>
+                        <a href="git.html#git">Git</a>
+                        <a href="git.html#github">GitHub</a>
+                        <a href="git.html#devgit">Desenvolvimento</a>
+                        <a href="git.html#config">Configurando</a>
+                        <a href="git.html#pratice">Boas Práticas</a>
                     </div>
                 </li>
                 <li class="reactable">
                     <a href="pages.html">GitHub Pages</a>
                     <div class="expand">
-                        <a href="pages.html">Link 1</a>
-                        <a href="pages.html">Link 2</a>
-                        <a href="pages.html">Link 3</a>
+                        <a href="pages.html#static">Página Estática</a>
+                        <a href="pages.html#react">Página React</a>
                     </div>
                 </li>
                 <li class="reactable"><a href="https://luccasgomes.com/portifolio" target="_blank">Portifólio</a></li>
@@ -104,7 +105,253 @@
         </nav>
     </header>
     <main>
-        <h1>Git e GitHub</h1>
+        <section>
+            <article>
+                <h1>Git e GitHub</h1>
+            </article>
+            <article>
+                <h2 id="git">Git</h2>
+                <p>O surgimento do Git se dá por diversos problemas, sendo os principais deles: Preciso voltar o
+                    arquivona versão que estava antes - rollback - Ctrl+Z; Deleção de arquivo sem a possibilidade
+                    derecuperação; Cópias e mais copias de um arquivos: tcc.docx; tcc-final.docx; tcc-agora-vai.docx;
+                </p>
+                <p>Para solucionar esse problema os sistemas de controle de versão são ferramentas de
+                    software que ajudam as equipes de software a
+                    gerenciar as alterações ao código-fonte ao longo do
+                    tempo.
+                </p>
+                <p>
+                    Assim foi criado o BitKeeper, um software capaz de versionar os códigos. Mas com o tempo, a
+                    ferramenta de versionamento que começou a exigir pagamento das outras empresas de software para que
+                    fosse usada.
+                </p>
+                <p>
+                    Descontente com as cobranças do BitKeeper, o dono
+                    do Linux criou o Git.
+                    Corrigindo várias deficiências do BitKeeper.
+                </p>
+                <p>
+                    O Git ferramenta de versionamento local, que salva o
+                    estado de cada arquivo na hora do versionamento e
+                    caso o arquivo não sofra a alteração ele cria um link
+                    simbólico para o arquivo não editado.
+                </p>
+                <img class="exGit" src="assets/images/exemple2.PNG" alt="Exemplo de versionamento di Git">
+            </article>
+            <article>
+                <h2 id="github">GitHub</h2>
+                <p>Para a criação do GitHub, o problema apresentado foi a necessidade de conseguir trabalhar em equipe,
+                    usando o Git para controlar o versionamento do projeto. Além de como seria possível compartilhar o
+                    código fonte?
+                </p>
+                <p>
+                    Para isso foi criado o GitHub. Um serviço web compartilhado para projetos que utilizam
+                    o Git para versionamento. É um local de armazenamento de código.
+                </p>
+            </article>
+        </section>
+        <section>
+            <article>
+                <h1 id="devgit">Desenvolvimento com Git e GitHub</h1>
+                <p>
+                    O desenvolvimento de software
+                    possui uma característica forte
+                    quanto ao desenvolvimento
+                    paralelo(em conjunto) do software
+                    pela equipe de desenvolvedores.
+                </p>
+                <p>
+                    O desenvolvimento de um site com o uso do Git e GitHub é uma prática comum na indústria de
+                    desenvolvimento web, pois oferece um ambiente colaborativo e controlado para equipes de
+                    desenvolvedores trabalharem juntas de maneira eficiente. Vamos explicar como esse processo funciona,
+                    destacando o uso de branches, pulls e requests.
+                </p>
+            </article>
+            <article>
+                <h2>Branchs</h2>
+                <p>
+                    "Branch, em tradução literal, significa “ramo”. No mundo da programação, ela tem o mesmo
+                    significado:
+                    uma branch é uma ramificação do seu projeto.
+                    Os repositórios no GitHub funcionam como uma árvore. Quando criamos um repositório, ele
+                    automaticamente é iniciado com a branch master, que é equivalente ao tronco da sua árvore, ou seja,
+                    é a parte principal do seu projeto. As próximas branches são secundárias e, portanto, ramos da
+                    branch master." (Entendendo sobre branch e pull request - MANZIERI, Catarina - Acesso em 01/09/23)
+                </p>
+                <p>
+                    É útil em situações nas quais você deseja
+                    adicionar um novo recurso ou corrigir um erro,
+                    gerando uma nova ramificação garantindo que o
+                    código instável não seja mesclado nos arquivos
+                    do projeto principal.
+                </p>
+                <img class="exGit"
+                    src="https://res.cloudinary.com/practicaldev/image/fetch/s--A6pkiOBG--/c_imagga_scale,f_auto,fl_progressive,h_900,q_auto,w_1600/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/eev37hwxalgf019j42a9.png"
+                    alt="Exemplo de branchs">
+            </article>
+            <article>
+                <h2>Pull Requests</h2>
+                <p>
+                    Quando um desenvolvedor conclui uma tarefa em seu branch e deseja incorporar essas alterações ao
+                    branch principal, ele cria um Pull Request (PR) no GitHub.
+                    O PR é uma solicitação para que outros membros da equipe revisem e discutam as mudanças feitas no
+                    código.
+                    Isso cria um espaço para revisões de código, feedback e discussões antes de mesclar as alterações no
+                    branch principal.
+                </p>
+            </article>
+            <article>
+                <h2>Revisão e Discussão</h2>
+                <p>
+                    Outros membros da equipe revisam o código no PR, fazem comentários, sugerem alterações e discutem as
+                    mudanças propostas.
+                    O objetivo é garantir a qualidade do código e manter a consistência do projeto.
+                </p>
+            </article>
+            <article>
+                <h2>Merging</h2>
+                <p>
+                    Após a revisão e a aprovação, o PR pode ser mesclado (merged) no branch principal.
+                    As alterações feitas no branch do PR agora fazem parte do código principal do site.
+                </p>
+            </article>
+            <article>
+                <h2>Deploy</h2>
+                <p>
+                    Após a mesclagem, o código atualizado pode ser implantado no ambiente de produção, tornando as
+                    alterações visíveis para os usuários do site.
+                </p>
+                <p>
+                    O uso de Git e GitHub simplifica a colaboração, rastreia alterações e permite que os desenvolvedores
+                    trabalhem em conjunto de forma eficaz. Essa metodologia é essencial para o desenvolvimento web
+                    moderno, facilitando a construção e o aprimoramento de sites de maneira organizada e controlada.
+                </p>
+            </article>
+        </section>
+        <section id="config">
+            <article>
+                <h1>Instalação e Configuração do Git</h1>
+                <a class="linkGit" href="https://git-scm.com/downloads"
+                    target="_blank">https://git-scm.com/downloads</a>
+            </article>
+            <article>
+                <h2>Intalação</h2>
+                <p>A Instalação do Git é só dar NEXT em tudo e fé :D</p>
+            </article>
+            <article>
+                <h2>Configurando Git</h2>
+                <h3>Primeiro confira se o git está instalado e qual a versão</h3>
+                <code>git --version</code>
+                <h3>Entre na pasta documentos</h3>
+                <code>cd Documents/</code>
+                <h3>Configure o nome de usuário</h3>
+                <code>git config --global user.name "'nome'"</code>
+                <h3>Configure o e-mail</h3>
+                <code>git config --global user.email "'email'" </code>
+                <h3>Para criar pasta utilize</h3>
+                <code>mkdir "nome da pasta"</code>
+            </article>
+            <article>
+                <h2>Configurando GitHub com a chave SSH</h2>
+                <h3>Verificar se existe chave ssh</h3>
+                <code>ls -al ~/.ssh</code>
+                <h3>Adicionar uma nova chave</h3>
+                <code>ssh-keygen -t ed25519 -C "'your_email@example.com'"</code>
+                <h3>Inicializar agente-ssh</h3>
+                <code>eval "$(ssh-agent -s)"</code>
+                <h3>Adicionar chave ssh ao agente</h3>
+                <code>ssh-add ~/.ssh/id_ed25519</code>
+                <h3>Copiar chave ssh</h3>
+                <code>clip < ~/.ssh/id_ed25519.pub</code>
+                <h3>Adicionar chave no github</h3>
+                <h4>Github -> Settings -> SSH and GPG keys -> New SSH key -> Colar</h4>
+                <h3>Testar conexão</h3>
+                <code>ssh -T git@github.com</code>
+                <code>yes</code>
+                <h3>Para realizar um commit pelo terminal</h3>
+                <code>git commit -m "descrição"</code>
+            </article>
+            <article>
+                <h2>Criando e clonando repositórios</h2>
+                <h3>Criando por comando:</h3>
+                <code>git init</code>
+                <h3>Criando pelo GitHub:</h3>
+                <p>Só clicar no botão e fé</p>
+                <img class="exGit" src="assets/images/ex6.PNG">
+                <h3>Clonando repositórios:</h3>
+                <p>Indo no repositório que você deseja clonar basta copiar a chave SSH</p>
+                <img class="exGit" src="assets/images/ex7.PNG">
+                <p>Após copiar basta ir no terminal e colocar o o seguinte código</p>
+                <code>git clone "git@github.com:usuario/repositorio.git"</code>
+            </article>
+        </section>
+        <section id="pratice">
+            <article>
+                <h1>Boas práticas</h1>
+            </article>
+            <article>
+                <h2>Adicione um README</h2>
+                <p>Inclua um arquivo README.md em seus repositórios para descrever o projeto, suas funcionalidades e
+                    como configurá-lo. Isso ajuda os outros a entenderem rapidamente o propósito do repositório</p>
+            </article>
+            <article>
+                <h2>NUNCA COMMITAR NA MAIN/MASTER/PROD</h2>
+                <p>
+                    Para isso abrimos branchs:
+                    <br>
+                    <b>feat:</b> Algo relacionado com features que você adicionar;
+                    <br>
+                    <b>fix:</b> Algo para corrigir;
+                    <br>
+                    <b>docs:</b> Algo relacionado a documentações, README e afins;
+                    <br>
+                    <b>style:</b> Algo relacionado com estilização;
+                    <br>
+                    <b>refactor:</b> Algo relacionado com refatoração(refazer);
+                    <br>
+                    <b>perf:</b> Algo relacionado a performance;
+                    <br>
+                    <b>test:</b> Algo com testes;
+                    <br>
+                    <b>chore:</b> Algo para coisas relacionados a build, configs e afins. Exemplo: Use esse,
+                    seja atualizando a versão do pacote ou instalando novas dependências.
+                </p>
+            </article>
+            <article>
+                <h2>Commit Semântico</h2>
+                <p>
+                    Adote uma convenção de nomenclatura de commits significativa, como o "Commit Semântico", para que os
+                    commits sejam descritivos e fáceis de entender. Isso ajuda a rastrear as mudanças de forma mais
+                    clara.
+                </p>
+            </article>
+            <article>
+                <h2>CI e CD</h2>
+                <p>
+                    <b>Integração contínua:</b> é uma pratica em que os
+                    desenvolvedores, frequentemente, juntam as alterações de
+                    código. Ou seja, realizam o merge da branch(ramo) para a
+                    master(raiz).
+                    Utilizamos um controle de versionamento para isso, o Git.
+                </p>
+                <p>
+                    <b>Entrega contínua:</b> é uma prática de desenvolvimento de
+                    software na qual as alterações de código são
+                    automaticamente preparadas para uma liberação para
+                    produção.
+                    Usamos um servidor para hospedagem, o Heroku.
+                </p>
+            </article>
+            <article>
+                <h2>Realizar Backups</h2>
+                <p>
+                    Algumas coisas podem fugir do nosso controle, como por exemplo:
+                    Invasões de hackers na base de dados;
+                    Uso indevido do banco de dados;
+                    Queda desconhecida de um serviço provedor. Por esses motivos é de extema importância realizar Backups
+                </p>
+            </article>
+        </section>
     </main>
     <footer>
         <div>
